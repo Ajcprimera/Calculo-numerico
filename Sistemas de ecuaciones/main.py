@@ -6,12 +6,13 @@ from operaciones import Graficacion,vector,matriz
 def main():
     graficacion = Graficacion()
     punto = graficacion.sol_ecuacion()
-    print(matriz)
-    print(vector)
+    print('Sistema de ecuaiones:')
     print('\n'.join([''.join(['{:3}'.format(item) for item in row]) for row in matriz]))
+    for i in vector:
+        print(i, end = ' ')
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-
+    print('La solucion al sistema de ecuaciones es:', ax)
     x, y = np.linspace(-10, 10, 100), np.linspace(-10, 10, 100)
     X, Y = np.meshgrid(x, y)
     Z1 = (vector[0] - matriz[0][0]*X - matriz[0][1]*Y) / matriz[0][2]
